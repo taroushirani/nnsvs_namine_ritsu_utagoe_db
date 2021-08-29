@@ -138,7 +138,7 @@ for base in tqdm(base_files):
         if len(valid_note_indices) < len(note_indices):
             D = len(note_indices) - len(valid_note_indices)
             print(f"{utt_id}_seg{seg_idx}.lab: {D}/{len(note_indices)} time-lags are excluded.")
-        if len(valid_note_indices) < len(note_indices) / 2:
+        if len(valid_note_indices) < 2 or len(valid_note_indices) < len(note_indices) / 2:
             black_list.append(splitext(name)[0])
 
         # Note onsets as labels
